@@ -3,7 +3,9 @@ import java.util.Map;
 
 public class main {
     public static void main(String[] args) {
-
+        countDuplicateCharacterOfAllCharacter("Hello");
+        findTheMostNonRepetedCharacter("Hello");
+        reverseLetterInEachWord("Hello Hey");
     }
     public static Map<Character,Integer> countDuplicateCharacterOfAllCharacter(String s){ // it works
         s = s.toLowerCase();
@@ -19,12 +21,12 @@ public class main {
      * Puis nous transformants les entry (le nombre d'apparition de la valeur) en flux de donnée
      * Nous trions le flux de donnée (cf comparingByValue)
      * Puis nous récupérons dans l'ordre trié les clés de la map et nous récupérons la première valeur.
-     * @param s
+     * @param s représente le string de la fonction
      * @return char
      */
     public static char findTheMostNonRepetedCharacter(String s){ // it works
         s = s.toLowerCase();
-        Map<Character,Integer> map = new HashMap<Character, Integer>();
+        Map<Character,Integer> map = new HashMap<>();
         fillMap(s, map);
         System.out.println(map);
         return map.entrySet()
