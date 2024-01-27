@@ -1,11 +1,12 @@
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 public class main {
     public static void main(String[] args) {
         countDuplicateCharacterOfAllCharacter("Hello");
         findTheMostNonRepetedCharacter("Hello");
         reverseLetterInEachWord("Hello Hey");
+        String thomas = reverseLetterInEachWordAndSentence("Thomas wallah t'es trop beau");
+        System.out.println(reverseLetterInEachWordAndSentence(thomas));
     }
     public static Map<Character,Integer> countDuplicateCharacterOfAllCharacter(String s){ // it works
         s = s.toLowerCase();
@@ -43,8 +44,20 @@ public class main {
         }
         return String.join(" ",words);
     }
+    public static String reverseLetterInEachWordAndSentence(String s){
+        String[] words = s.split("\\s");
+        for (int i = 0; i < words.length; i++){
+            words[i] = new StringBuilder(words[i]).reverse().toString();
+        }
+        StringBuilder str = new StringBuilder();
+        for (int i=words.length-1; i > -1; i--){
+            str.append(words[i]);
+            str.append(" ");
+        }
+        return str.toString();
+    }
 
-    private static void fillMap(String s, Map<Character, Integer> map) {
+    public static void fillMap(String s, Map<Character, Integer> map) {
         for (int i = 0; i < s.length(); i++){
             if (map.containsKey(s.charAt(i))){
                 map.put(s.charAt(i),map.get(s.charAt(i))+1);
@@ -53,4 +66,5 @@ public class main {
             }
         }
     }
+
 }
