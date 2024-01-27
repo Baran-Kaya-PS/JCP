@@ -66,5 +66,7 @@ public class main {
             }
         }
     }
-
+    public static int convertStringIntoInt(String s){
+        return Integer.parseInt(s);
+    }
 }
