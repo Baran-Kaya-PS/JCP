@@ -69,4 +69,13 @@ public class main {
     public static int convertStringIntoInt(String s){
         return Integer.parseInt(s);
     }
+    public static String removeWhiteSpaces(String s){
+        StringBuilder s2 = new StringBuilder();
+        for (int i = 0 ; i < s.length();i++){
+            if (Character.isAlphabetic(s.charAt(i))){
+                s2.append(s.charAt(i));
+            }
+        }
+        return s2.toString();
+    }
 }
