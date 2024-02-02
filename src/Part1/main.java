@@ -80,4 +80,18 @@ public class main {
         }
         return s2.toString();
     }
+    public static String removeWhiteSpacesWithReplace(String s){
+        return s.replace("\\s","");
+    }
+    public static String joinByDelimiter(char delimiter, String...args){
+        StringBuilder result = new StringBuilder();
+        for (int i = 0; i < args.length - 1 ; i++){
+            result.append(args[i]).append(delimiter);
+        }
+        return result.toString();
+    }
+    public static List<ArrayList<Object>> generatingAllPermutation(ArrayList<Object> list){
+        //TODO
+        return null;
+    }
 }
